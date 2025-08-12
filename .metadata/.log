@@ -1,0 +1,36 @@
+!SESSION 2025-08-13 00:29:22.632 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -data /home/ahmad/Documents/embedded-cpp
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-08-13 00:29:26.127
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-08-13 00:29:26.128
+!MESSAGE Log4j2 initialized with config file /home/ahmad/Documents/embedded-cpp/.metadata/.log4j2.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-08-13 00:29:27.595
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-08-13 00:29:27.604
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-08-13 00:29:28.035
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-13 00:29:29.212
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.348.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-13 00:29:29.499
+!MESSAGE [Info]	[certificates] Removed 3 expired certificates
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-13 00:30:32.579
+!MESSAGE Indexed '01_LED_OOP' (3 sources, 53 headers) in 0.747 sec: 1,954 declarations; 2,863 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-13 00:31:17.711
+!MESSAGE Indexed '01_LED_OOP' (3 sources, 53 headers) in 0.196 sec: 1,954 declarations; 2,863 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-13 00:33:04.019
+!MESSAGE Indexed '01_LED_OOP' (3 sources, 53 headers) in 0.172 sec: 1,954 declarations; 2,863 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)

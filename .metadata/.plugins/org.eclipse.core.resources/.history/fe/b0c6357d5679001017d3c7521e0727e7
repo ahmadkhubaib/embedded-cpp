@@ -15,7 +15,10 @@ private:
 	GPIO_TypeDef *port;
 	uint8_t pin;
 public:
-	GPIO(GPIO_TypeDef *port, uint8_t pin, bool isOutput = true);
+	GPIO(GPIO_TypeDef *port, uint8_t pin, bool isOutput) :
+			port(port), pin(pin) {
+
+	}
 
 	void toggle();
 	void set();

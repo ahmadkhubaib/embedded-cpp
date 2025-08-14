@@ -5,9 +5,10 @@ int main() {
 	GPIO button(GPIOC, 13, false); // Create an instance of GPIO for pin PC13 as input
 
 	while (1) {
-		if (!button.read()) {
+		if (button.read()) {
 			led.toggle(); // Toggle the LED state
-
+			for (volatile int i = 0; i < 100000; i++)
+				; // Simple delay
 		}
 	}
 }

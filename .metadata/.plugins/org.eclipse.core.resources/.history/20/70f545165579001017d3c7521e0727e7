@@ -1,0 +1,13 @@
+#include "led.hpp"
+
+int main(){
+	GPIO led(GPIOA, 5, true); // Create an instance of GPIO for pin PA5 as output
+	GPIO button(GPIOC, 13, false); // Create an instance of GPIO for pin PC13 as input
+
+	while (1) {
+		if (butto) { // Check if button is pressed (active low)
+			led.toggle(); // Toggle the LED state
+			for (volatile int i = 0; i < 100000; i++); // Simple delay
+		}
+	}
+}

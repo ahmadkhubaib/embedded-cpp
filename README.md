@@ -16,4 +16,4 @@ This repo contains code for the STM32 NUCLEO-F411RE board written in C++
 
 ##### For microPython repo, please look here
 
-[ahmadkhubaib's IoT ESP32 repo](https://github.com/ahmadkhubaib/micropy)
+[ahmadkhubaib's microPython repo](https://github.com/ahmadkhubaib/micropy)

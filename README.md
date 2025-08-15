@@ -13,3 +13,7 @@ This repo contains code for the STM32 NUCLEO-F411RE board written in C++
 ##### For IoT app dev with ESP32 using ESP-IDF repo, please look here
 
 [ahmadkhubaib's IoT ESP32 repo](https://github.com/ahmadkhubaib/IoT-ESP32)
+
+##### For microPython repo, please look here
+
+[ahmadkhubaib's IoT ESP32 repo](https://github.com/ahmadkhubaib/micropy)

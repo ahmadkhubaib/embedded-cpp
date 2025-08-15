@@ -7235,3 +7235,12 @@ java.io.IOException: No such file or directory
 
 !ENTRY org.eclipse.lsp4e 1 0 2025-08-14 23:36:57.730
 !MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-15 22:20:18.269
+!MESSAGE Indexed '00_UART_LED' (4 sources, 88 headers) in 1.5 sec: 4,134 declarations; 6,961 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.018%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-15 22:20:18.833
+!MESSAGE Indexed '01_LED_OOP' (5 sources, 89 headers) in 0.561 sec: 4,153 declarations; 7,039 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.018%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-15 22:20:54.379
+!MESSAGE Indexed '02_USART_OOP' (10 sources, 89 headers) in 0.835 sec: 3,852 declarations; 5,891 references; 13 unresolved inclusions; 30 syntax errors; 639 unresolved names (6.2%)

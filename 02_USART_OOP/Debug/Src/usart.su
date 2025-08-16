@@ -1,0 +1,6 @@
+../Src/usart.cpp:14:1:USART::USART(USART_TypeDef*, uint32_t)	24	static
+../Src/usart.cpp:33:6:void USART::setBaudRate(uint32_t)	16	static
+../Src/usart.cpp:37:6:void USART::sendChar(char)	16	static
+../Src/usart.cpp:42:6:void USART::sendString(const char*)	16	static
+../Src/usart.cpp:48:13:void uart_set_baudrate(USART_TypeDef*, uint32_t, uint32_t)	24	static
+../Src/usart.cpp:52:17:uint16_t compute_uart_br(uint32_t, uint32_t)	16	static

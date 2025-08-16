@@ -1,2 +1,5 @@
 1755038361170	Delete resource '00_UART_DRIVER'
 1755113115037	Delete resource '00_UART_LED/Inc/aauart.hpp'
+1755289271621	Delete resource '02_USART_OOP/01_LED_OOP.launch'
+1755289282698	Delete resource '02_USART_OOP/Debug/01_LED_OOP.elf'
+1755289296318	Delete 2 resources

@@ -5,9 +5,11 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../Src/fpu.cpp \
 ../Src/led.cpp \
 ../Src/main.cpp \
-../Src/uart.cpp 
+../Src/uart.cpp \
+../Src/usart.cpp 
 
 C_SRCS += \
 ../Src/syscalls.c \
@@ -18,16 +20,20 @@ C_DEPS += \
 ./Src/sysmem.d 
 
 OBJS += \
+./Src/fpu.o \
 ./Src/led.o \
 ./Src/main.o \
 ./Src/syscalls.o \
 ./Src/sysmem.o \
-./Src/uart.o 
+./Src/uart.o \
+./Src/usart.o 
 
 CPP_DEPS += \
+./Src/fpu.d \
 ./Src/led.d \
 ./Src/main.d \
-./Src/uart.d 
+./Src/uart.d \
+./Src/usart.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -39,7 +45,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/led.cyclo ./Src/led.d ./Src/led.o ./Src/led.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/uart.cyclo ./Src/uart.d ./Src/uart.o ./Src/uart.su
+	-$(RM) ./Src/fpu.cyclo ./Src/fpu.d ./Src/fpu.o ./Src/fpu.su ./Src/led.cyclo ./Src/led.d ./Src/led.o ./Src/led.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/uart.cyclo ./Src/uart.d ./Src/uart.o ./Src/uart.su ./Src/usart.cyclo ./Src/usart.d ./Src/usart.o ./Src/usart.su
 
 .PHONY: clean-Src
 

@@ -57,34 +57,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 01_LED_OOP
+BUILD_ARTIFACT_NAME := 02_USART_OOP
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-01_LED_OOP.elf \
+02_USART_OOP.elf \
 
 MAP_FILES += \
-01_LED_OOP.map \
+02_USART_OOP.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-01_LED_OOP.list \
+02_USART_OOP.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 01_LED_OOP.elf secondary-outputs
+main-build: 02_USART_OOP.elf secondary-outputs
 
 # Tool invocations
-01_LED_OOP.elf 01_LED_OOP.map: $(OBJS) $(USER_OBJS) /home/ahmad/Documents/embedded-cpp/01_LED_OOP/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "01_LED_OOP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/ahmad/Documents/embedded-cpp/01_LED_OOP/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_LED_OOP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+02_USART_OOP.elf 02_USART_OOP.map: $(OBJS) $(USER_OBJS) /home/ahmad/Documents/embedded-cpp/02_USART_OOP/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "02_USART_OOP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/ahmad/Documents/embedded-cpp/02_USART_OOP/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="02_USART_OOP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -93,14 +93,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-01_LED_OOP.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "01_LED_OOP.list"
+02_USART_OOP.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "02_USART_OOP.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 01_LED_OOP.elf 01_LED_OOP.list 01_LED_OOP.map default.size.stdout
+	-$(RM) 02_USART_OOP.elf 02_USART_OOP.list 02_USART_OOP.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

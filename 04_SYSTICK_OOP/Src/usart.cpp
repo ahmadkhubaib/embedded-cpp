@@ -1,0 +1,54 @@
+/*
+ * usart.cpp
+ *
+ *  Created on: Aug 15, 2025
+ *      Author: ahmad
+ */
+
+#include "usart.hpp"
+
+// Forward declarations for static helper functions
+static uint16_t compute_uart_br(uint32_t _periph_clock, uint32_t _baud_rate);
+static void uart_set_baudrate(USART_TypeDef *USARTx, uint32_t _periph_clock, uint32_t _baud_rate);
+
+USART::USART(USART_TypeDef *usart, uint32_t baudrate) : usart(usart), baudRate(baudrate){
+	RCC->AHB1ENR |= (1U << 0);
+
+	GPIOA->MODER &= ~(1U << 4);
+	GPIOA->MODER |= (1U << 5);
+	
+	GPIOA->AFR[0] |= (1U << 8);
+	GPIOA->AFR[0] |= (1U << 9);
+	GPIOA->AFR[0] |= (1U <<10);
+	GPIOA->AFR[0] &=~(1U << 11);
+	
+	RCC->APB1ENR |= (1U << 17);
+	
+	setBaudRate(16000000);
+	
+	USART2->CR1 = (1U << 3);
+	USART2->CR1 |= (1U << 13);
+}
+
+void USART::setBaudRate(uint32_t periph_clock) {
+    uart_set_baudrate(usart, periph_clock, baudRate);
+}
+
+void USART::sendChar(char c) {
+	while (!(USART2->SR & (1U << 7))); // Wait until TXE is set
+	USART2->DR = c & 0xFF; // Send character
+}
+
+void USART::sendString(const char *str) {
+	while (*str) {
+		sendChar(*str++);
+	}
+}
+
+static void uart_set_baudrate(USART_TypeDef *USARTx, uint32_t _periph_clock, uint32_t _baud_rate){
+	USARTx->BRR = compute_uart_br(_periph_clock, _baud_rate);
+}
+
+static uint16_t compute_uart_br(uint32_t _periph_clock, uint32_t _baud_rate){
+	return ((_periph_clock + (_baud_rate/2U))/_baud_rate);
+}

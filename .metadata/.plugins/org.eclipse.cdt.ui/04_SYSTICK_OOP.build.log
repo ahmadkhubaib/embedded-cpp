@@ -1,0 +1,10 @@
+15:23:52 **** Incremental Build of configuration Debug for project 04_SYSTICK_OOP ****
+make -j12 all 
+arm-none-eabi-size  04_SYSTICK_OOP.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1844	      0	   1568	   3412	    d54	04_SYSTICK_OOP.elf
+Finished building: default.size.stdout
+ 
+
+15:23:52 Build Finished. 0 errors, 0 warnings. (took 150ms)
+

@@ -1,0 +1,21 @@
+#include "led.hpp"
+#include "usart.hpp"
+#include "fpu.hpp"
+#include "timebase.hpp"
+
+int main() {
+	FPU_CP::enable(); // Enable the FPU
+	TimeBase::init(); // Initialize the time base for SysTick
+	GPIO led(GPIOA, 5, true); // Create an instance of GPIO for pin PA5 as output
+	GPIO button(GPIOC, 13, false); // Create an instance of GPIO for pin PC13 as input
+	USART usart(USART2, 115200); // Create an instance of USART for USART2 with baud rate 115200
+
+	while (1) {
+		usart.sendString("Hello, USART...one second delay!\n\r"); // Send a string over USART
+		TimeBase::delay(1); // Delay for (1 second)
+		if (!button.read()) {
+			led.toggle(); // Toggle the LED state
+
+		}
+	}
+}

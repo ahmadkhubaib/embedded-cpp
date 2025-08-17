@@ -1,0 +1,18 @@
+Src/led.o: ../Src/led.cpp ../Inc/led.hpp \
+ /home/ahmad/Documents/chip_headers/CMSIS/Device/ST/STM32F4xx/stm32f4xx.h \
+ /home/ahmad/Documents/chip_headers/CMSIS/Device/ST/STM32F4xx/stm32f411xe.h \
+ /home/ahmad/Documents/chip_headers/CMSIS/Include/core_cm4.h \
+ /home/ahmad/Documents/chip_headers/CMSIS/Include/cmsis_version.h \
+ /home/ahmad/Documents/chip_headers/CMSIS/Include/cmsis_compiler.h \
+ /home/ahmad/Documents/chip_headers/CMSIS/Include/cmsis_gcc.h \
+ /home/ahmad/Documents/chip_headers/CMSIS/Include/mpu_armv7.h \
+ /home/ahmad/Documents/chip_headers/CMSIS/Device/ST/STM32F4xx/system_stm32f4xx.h
+../Inc/led.hpp:
+/home/ahmad/Documents/chip_headers/CMSIS/Device/ST/STM32F4xx/stm32f4xx.h:
+/home/ahmad/Documents/chip_headers/CMSIS/Device/ST/STM32F4xx/stm32f411xe.h:
+/home/ahmad/Documents/chip_headers/CMSIS/Include/core_cm4.h:
+/home/ahmad/Documents/chip_headers/CMSIS/Include/cmsis_version.h:
+/home/ahmad/Documents/chip_headers/CMSIS/Include/cmsis_compiler.h:
+/home/ahmad/Documents/chip_headers/CMSIS/Include/cmsis_gcc.h:
+/home/ahmad/Documents/chip_headers/CMSIS/Include/mpu_armv7.h:
+/home/ahmad/Documents/chip_headers/CMSIS/Device/ST/STM32F4xx/system_stm32f4xx.h:

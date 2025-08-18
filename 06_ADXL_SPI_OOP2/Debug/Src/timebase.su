@@ -1,0 +1,5 @@
+../Src/timebase.cpp:21:6:static void TimeBase::init()	4	static,ignoring_inline_asm
+../Src/timebase.cpp:29:6:static void TimeBase::delay(uint32_t)	24	static
+../Src/timebase.cpp:43:10:static uint32_t TimeBase::getTicks()	16	static,ignoring_inline_asm
+../Src/timebase.cpp:50:6:static void TimeBase::tickIncrement()	4	static
+../Src/timebase.cpp:54:17:void SysTick_Handler()	8	static

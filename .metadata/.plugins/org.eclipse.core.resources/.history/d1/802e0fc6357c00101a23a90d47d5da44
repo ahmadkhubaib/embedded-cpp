@@ -1,0 +1,27 @@
+#include "led.hpp"
+#include "usart.hpp"
+#include "fpu.hpp"
+#include "timebase.hpp"
+#include "adc_custom.hpp"
+
+int adc_value = 0; // Variable to store ADC value
+
+int main() {
+	FPU_CP::enable(); // Enable the FPU
+	TimeBase::init(); // Initialize the time base for SysTick
+	ADC_CUSTOM adc_custom(ADC1, GPIOA, 1); // Create an instance of ADC_OBJ for ADC1 on pin PA1
+	GPIO led(GPIOA, 5, true); // Create an instance of GPIO for pin PA5 as output
+	GPIO button(GPIOC, 13, false); // Create an instance of GPIO for pin PC13 as input
+	USART usart(USART2, 115200); // Create an instance of USART for USART2 with baud rate 115200
+	adc_custom.init(); // Initialize the ADC
+	adc_custom.start_conversion(); // Start the ADC conversion
+	while (1) {
+		adc_value = adc_custom.read(); // Read the ADC value
+		usart.sendString("%d\n\r", adc_value); // Send a string over USART
+		TimeBase::delay(1); // Delay for (1 second)
+		if (!button.read()) {
+			led.toggle(); // Toggle the LED state
+
+		}
+	}
+}

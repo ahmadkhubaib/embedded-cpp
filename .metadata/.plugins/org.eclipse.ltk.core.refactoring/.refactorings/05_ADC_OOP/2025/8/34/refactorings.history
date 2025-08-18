@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;05_ADC_OOP/Inc/adc.hpp&apos; to &apos;adc_custom.hpp&apos;" description="Rename resource &apos;adc.hpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Inc/adc.hpp" name="adc_custom.hpp" stamp="1755513766625" updateReferences="true"/>
+</session>

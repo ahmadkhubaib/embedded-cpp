@@ -1,0 +1,30 @@
+/*
+ * adc.cpp
+ *
+ *  Created on: Aug 17, 2025
+ *      Author: ahmad
+ */
+
+
+#include "adc.hpp"
+
+#define GPIOAEN (1U << 0) // Enable clock for GPIOA
+#define ADC1EN (1U << 8) // Enable clock for ADC1
+#define ADC_CH1 (1U << 0) // Channel 1 for ADC
+#define ADC_SEQ_LEN 0x00 // Sequence length for ADC
+#define ADC_ON (1U << 0) // ADC ON bit
+
+ADC_OBJ::ADC_OBJ(ADC_Typedef* adcX, GPIO_Typedef* gpioX, uint8_t pin): adcX(adcX), gpio(gpioX), pin(pin){
+
+}
+
+void ADC_OBJ::init()
+{
+	RCC->AHB1ENR |= GPIOAEN; // Enable clock for GPIOA
+	gpioX->MODER |= (1U (2 * pin));
+	gpio->MODER |= (1U << (2 * pin + 1)); // Set pin as analog mode
+	RCC->APB2ENR |= ADC1EN; // Enable clock for ADC1
+	adcX->SQR3 = ADC_CH1; // Set channel 1 for ADC
+	adcX->SQR1 = ADC_SEQ_LEN; // Set sequence length to 1
+	adcX->CR2 |= ADC_ON; // Enable ADC
+}

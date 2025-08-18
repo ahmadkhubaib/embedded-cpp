@@ -10,7 +10,7 @@
 
 #include "stm32f4xx.h"
 
-class SPI {
+class SPI{
 private:
 	SPI_TypeDef *spiX; // Pointer to the SPI peripheral
 	GPIO_TypeDef *gpioX; // Pointer to the GPIO port
@@ -18,13 +18,9 @@ private:
 	void configureGPIO(); // Configure GPIO for SPI communication
 	void configureSPI(); // Configure the SPI peripheral
 public:
-	SPI(SPI_TypeDef *spiX, GPIO_TypeDef *gpioX, uint8_t cs_pin);
 
-	void init(); // Initialize the SPI peripheral
-	void sendData(uint8_t *data, uint32_t size); // Send data over SPI
-	uint8_t receiveData(); // Receive data over SPI
-	void setCSHigh(); // Set Chip Select pin high
-	void setCSLow(); // Set Chip Select pin low
 };
+
+
 
 #endif /* SPI_HPP_ */

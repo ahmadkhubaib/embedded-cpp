@@ -1,0 +1,14 @@
+/*
+ * spi.cpp
+ *
+ *  Created on: Aug 18, 2025
+ *      Author: ahmad
+ */
+
+#include "spi.hpp"
+
+#define SPI1EN      (1U << 12) // Enable clock for SPI1
+#define GPIOAEN     (1U << 0)  // Enable clock for GPIOA
+#define SR_TXE      (1U << 1)  // Transmit buffer empty flag
+#define SR_RXNE     (1U << 0)  // Receive buffer not empty flag
+#define SR_BSY      (1U << 7)  // Busy flag

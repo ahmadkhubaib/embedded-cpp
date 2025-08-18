@@ -11942,3 +11942,6 @@ java.lang.UnsupportedOperationException: Global index scope has to be mapped to 
 
 !ENTRY org.eclipse.lsp4e 1 0 2025-08-18 15:18:33.250
 !MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-18 23:30:05.510
+!MESSAGE Indexed '06_ADXL_SPI_OOP2' (12 sources, 92 headers) in 1.6 sec: 3,897 declarations; 5,956 references; 14 unresolved inclusions; 30 syntax errors; 651 unresolved names (6.2%)

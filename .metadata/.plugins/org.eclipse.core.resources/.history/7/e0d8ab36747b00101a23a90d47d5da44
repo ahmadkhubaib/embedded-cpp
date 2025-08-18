@@ -1,0 +1,14 @@
+/*
+ * adc.cpp
+ *
+ *  Created on: Aug 17, 2025
+ *      Author: ahmad
+ */
+
+
+#include "adc.hpp"
+
+
+ADC_OBJ::ADC_OBJ(ADC_Typedef* adc, GPIO_Typedef* gpio, uint8_t pin): adc(adc), gpio(gpio), pin(pin){
+
+}

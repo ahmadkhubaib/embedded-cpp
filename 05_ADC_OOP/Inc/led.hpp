@@ -1,0 +1,25 @@
+/*
+ * led.hpp
+ *
+ *  Created on: Aug 13, 2025
+ *      Author: ahmad
+ */
+
+#include "stm32f4xx.h"
+
+#ifndef LED_HPP_
+#define LED_HPP_
+
+class GPIO {
+private:
+	GPIO_TypeDef *port;
+	uint8_t pin;
+public:
+	GPIO(GPIO_TypeDef *port, uint8_t pin, bool isOutput = true);
+
+	void toggle();
+	void set();
+	void reset();
+	bool read();
+};
+#endif /* LED_HPP_ */

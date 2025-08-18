@@ -1,0 +1,22 @@
+/*
+ * adc.cpp
+ *
+ *  Created on: Aug 17, 2025
+ *      Author: ahmad
+ */
+
+
+#include "adc.hpp"
+
+#define GPIOAEN (1U << 0) // Enable clock for GPIOA
+#define ADC1EN (1U << 8) // Enable clock for ADC1
+ADC_OBJ::ADC_OBJ(ADC_Typedef* adcX, GPIO_Typedef* gpioX, uint8_t pin): adcX(adcX), gpio(gpioX), pin(pin){
+
+}
+
+void ADC_OBJ::init()
+{
+	RCC->AHB1ENR |= GPIOAEN; // Enable clock for GPIOA
+	gpioX->MODER |= (1U (2 * pin));
+	gpio->MODER |= (1U << (2 * pin + 1)); // Set pin as analog mode
+}

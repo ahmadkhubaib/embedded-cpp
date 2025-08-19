@@ -57,34 +57,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 06_ADXL_SPI_OOP2
+BUILD_ARTIFACT_NAME := 06_ADXL_SPI_OOP
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-06_ADXL_SPI_OOP2.elf \
+06_ADXL_SPI_OOP.elf \
 
 MAP_FILES += \
-06_ADXL_SPI_OOP2.map \
+06_ADXL_SPI_OOP.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-06_ADXL_SPI_OOP2.list \
+06_ADXL_SPI_OOP.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 06_ADXL_SPI_OOP2.elf secondary-outputs
+main-build: 06_ADXL_SPI_OOP.elf secondary-outputs
 
 # Tool invocations
-06_ADXL_SPI_OOP2.elf 06_ADXL_SPI_OOP2.map: $(OBJS) $(USER_OBJS) /home/ahmad/Documents/embedded-cpp/06_ADXL_SPI_OOP2/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "06_ADXL_SPI_OOP2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/ahmad/Documents/embedded-cpp/06_ADXL_SPI_OOP2/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="06_ADXL_SPI_OOP2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+06_ADXL_SPI_OOP.elf 06_ADXL_SPI_OOP.map: $(OBJS) $(USER_OBJS) /home/ahmad/Documents/embedded-cpp/06_ADXL_SPI_OOP/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "06_ADXL_SPI_OOP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/ahmad/Documents/embedded-cpp/06_ADXL_SPI_OOP/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="06_ADXL_SPI_OOP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -93,14 +93,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-06_ADXL_SPI_OOP2.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "06_ADXL_SPI_OOP2.list"
+06_ADXL_SPI_OOP.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "06_ADXL_SPI_OOP.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 06_ADXL_SPI_OOP2.elf 06_ADXL_SPI_OOP2.list 06_ADXL_SPI_OOP2.map default.size.stdout
+	-$(RM) 06_ADXL_SPI_OOP.elf 06_ADXL_SPI_OOP.list 06_ADXL_SPI_OOP.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

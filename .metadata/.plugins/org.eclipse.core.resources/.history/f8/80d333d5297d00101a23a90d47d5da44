@@ -16,7 +16,7 @@ private:
 	GPIO_TypeDef *gpioX; // Pointer to the GPIO port
 	uint8_t cs_pin; // Pin number for the SPI communication
 	void configureGPIO(GPIO_TypeDef *gpioX, uint8_t cs_pin); // Configure GPIO for SPI communication
-	void configureSPI(SPI_TypeDef *spiX); // Configure the SPI peripheral
+	void configureSPI(SPI__TypeDef *spiX); // Configure the SPI peripheral
 public:
 	SPI(SPI_TypeDef *spiX, GPIO_TypeDef *gpioX, uint8_t cs_pin);
 

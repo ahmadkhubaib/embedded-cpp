@@ -1,0 +1,3 @@
+../Src/spi.cpp:20:1:SPI::SPI(SPI_TypeDef*, GPIO_TypeDef*, uint8_t)	1
+../Src/spi.cpp:28:6:void SPI::configureGPIO(GPIO_TypeDef*, uint8_t)	6
+../Src/spi.cpp:78:6:void SPI::configureSPI(SPI_TypeDef*)	6

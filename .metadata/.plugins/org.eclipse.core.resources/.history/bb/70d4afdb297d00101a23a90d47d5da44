@@ -75,7 +75,7 @@ void SPI::configureGPIO(GPIO_TypeDef *gpioX, uint8_t cs_pin) {
 
 }
 
-void SPI::configureSPI(SPI_TypeDef *spiX) {
+void SPI::configureSPI(SPI__TypeDef *spiX) {
 	// Configure the SPI peripheral
 
 	// Enable the clock for the SPI peripheral

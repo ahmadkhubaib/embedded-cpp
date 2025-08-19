@@ -108,19 +108,9 @@ void SPI::configureSPI(SPI_TypeDef *spiX) {
 }
 
 
-void SPI::sendData(uint8_t *data, uint32_t size) {
-	uint32_t i = 0;
-	uint8_t temp;
-	// Send data over SPI
-	for (uint32_t i = 0; i < size; i++) {
-		while (!(spiX->SR & SR_TXE)); // Wait until the transmit buffer is empty
-		spiX->DR = data[i]; // Write data to the data register
-	}
-	while (spiX->SR & SR_TXE); // Wait until the TXE is not set
-	while (spiX->SR & SR_BSY); // Wait until the SPI is not busy
-	temp = spiX->DR; // Read the data from the data register to clear the RXNE flag
-	temp = spiX->SR; // Read the status register to clear the BSY flag
-}
+
+
+
 
 
 

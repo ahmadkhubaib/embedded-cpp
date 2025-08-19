@@ -1109,3 +1109,138 @@ java.lang.NullPointerException: Property must not be null: text
 
 !ENTRY com.microsoft.copilot.eclipse 1 0 2025-08-19 20:25:09.129
 !MESSAGE [Info] Completion handler is refreshed for the document: file:///home/ahmad/Documents/embedded-cpp/06_ADXL_SPI_OOP/Inc/led.hpp
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2025-08-19 23:06:44.031
+!MESSAGE [Info] Completion request timed out after 5000 milliseconds
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:06:44.818
+!MESSAGE [Info]	[fetchCompletions] Request 1eb64b30-9e43-4b7d-9161-252847eb9ab6 at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 779.7926100194454ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:06:45.010
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:09.969
+!MESSAGE [Info]	[fetchCompletions] Request b95f8c40-e217-49b3-ba25-72cc491a973d at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 199.1351000070572ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:10.192
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:12.871
+!MESSAGE [Info]	[fetchCompletions] Request ac978886-63fd-4827-bc8c-72b6128cddde at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 154.87472799420357ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:13.638
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:21.885
+!MESSAGE [Info]	[fetchCompletions] Request fb56beed-631c-4361-a8e0-3c02ed044d87 at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 180.01118499040604ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:21.930
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:24.152
+!MESSAGE [Info]	[fetchCompletions] Request 5eea3f98-c119-4467-a38f-5acadbecc6ed at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 184.22775399684906ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:24.280
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:26.374
+!MESSAGE [Info]	[fetchCompletions] Request 9c75a8b8-377c-4082-a25d-99bb27b66fff at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 155.8859559893608ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:26.414
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:32.142
+!MESSAGE [Info]	[fetchCompletions] Request fffd1590-944e-4d76-9538-d487afcaa92b at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 165.0950310230255ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:32.214
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:35.687
+!MESSAGE [Info]	[fetchCompletions] Request 4b59fbd7-335a-4b31-b340-b5dfce7b32d7 at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 155.8374480009079ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:35.764
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:37.238
+!MESSAGE [Info]	[fetchCompletions] Request ed6bfce6-ea0d-4e66-af4e-e334d85e14ea at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 149.29840299487114ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:37.429
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:42.342
+!MESSAGE [Info]	[fetchCompletions] Request fed98aeb-ac79-4a03-b6e7-9472ae725aeb at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 151.63571402430534ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:42.392
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:45.045
+!MESSAGE [Info]	[fetchCompletions] Request d582eb9c-fbf0-4788-90bd-0d9c2022ee0d at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 152.7754909992218ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:45.045
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:46.621
+!MESSAGE [Info]	[fetchCompletions] Request 6f36d857-eea9-4d11-aa3c-01f1e9030786 at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 176.6884410083294ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:07:46.674
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:09:22.596
+!MESSAGE [Info]	[fetchCompletions] Request 971e4191-171b-4f64-8600-54e1bbe7fc64 at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 278.56560599803925ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:09:22.655
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:09:22.655
+!MESSAGE [Info]	[ghostText] Filtered out solution matching next line
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:09:37.247
+!MESSAGE [Info]	[fetchCompletions] Request df7129dc-913e-4311-a4fc-aadbf07c9a43 at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 169.28242602944374ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:09:37.287
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:05.298
+!MESSAGE [Info]	[fetchCompletions] Request 335b9fa9-8bd1-4ba9-8679-a095e431047c at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 185.69785702228546ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:05.341
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:05.341
+!MESSAGE [Info]	[ghostText] Filtered out solution matching next line
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:05.840
+!MESSAGE [Info]	[fetchCompletions] Request c6e0243e-dfc9-47e6-93f7-7f65b98ec7d4 at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 165.52305901050568ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:06.018
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:08.758
+!MESSAGE [Info]	[fetchCompletions] Request 7696f2a5-004f-4fb8-8b19-8b9776b64cfb at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 157.11194401979446ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:08.801
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:08.801
+!MESSAGE [Info]	[ghostText] Filtered out solution matching next line
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:11.412
+!MESSAGE [Info]	[fetchCompletions] Request 519e99f1-f14c-4723-96e8-90b2b42a3f9c at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 155.0435610115528ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:11.513
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:12.402
+!MESSAGE [Info]	[ghostText] Filtered out solution matching next line
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:13.281
+!MESSAGE [Info]	[fetchCompletions] Request f81762bf-7902-4cb4-b17c-46a7c8890f73 at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 158.32735300064087ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:10:13.419
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:13:14.647
+!MESSAGE [Info]	[fetchCompletions] Request 8c4103b5-bd19-4bb2-a61a-9962ff6830df at <https://proxy.business.githubcopilot.com/v1/engines/gpt-4o-copilot/completions> finished with 200 status after 352.3916600048542ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-08-19 23:13:15.044
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]

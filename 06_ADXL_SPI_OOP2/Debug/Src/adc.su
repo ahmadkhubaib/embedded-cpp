@@ -1,4 +1,0 @@
-../Src/adc.cpp:19:1:ADC_CUSTOM::ADC_CUSTOM(ADC_TypeDef*, GPIO_TypeDef*, uint8_t)	24	static
-../Src/adc.cpp:23:6:void ADC_CUSTOM::init()	16	static
-../Src/adc.cpp:33:6:void ADC_CUSTOM::start_conversion()	16	static
-../Src/adc.cpp:38:10:uint32_t ADC_CUSTOM::read()	16	static

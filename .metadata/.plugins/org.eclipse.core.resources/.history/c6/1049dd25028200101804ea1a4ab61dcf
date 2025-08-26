@@ -1,0 +1,30 @@
+/*
+ * spi.hpp
+ *
+ *  Created on: Aug 18, 2025
+ *      Author: ahmad
+ */
+
+#ifndef SPI_HPP_
+#define SPI_HPP_
+
+#include "stm32f4xx.h"
+
+class SPI {
+private:
+	SPI_TypeDef *spiX; // Pointer to the SPI peripheral
+	GPIO_TypeDef *gpioX; // Pointer to the GPIO port
+	uint8_t cs_pin; // Pin number for the SPI communication
+	void configureGPIO(GPIO_TypeDef *gpioX, uint8_t cs_pin); // Configure GPIO for SPI communication
+	void configureSPI(SPI_TypeDef *spiX); // Configure the SPI peripheral
+public:
+	SPI(SPI_TypeDef *spiX, GPIO_TypeDef *gpioX, uint8_t cs_pin);
+
+	void init(); // Initialize the SPI peripheral
+	void sendData(uint8_t *data, uint32_t size); // Send data over SPI
+	void receiveData(uint8_t *data, uint32_t size); // Receive data over SPI
+	void setCSHigh(); // Set Chip Select pin high
+	void setCSLow(); // Set Chip Select pin low
+};
+
+#endif /* SPI_HPP_ */

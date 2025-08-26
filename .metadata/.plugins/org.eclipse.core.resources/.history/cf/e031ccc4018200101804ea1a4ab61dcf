@@ -1,0 +1,151 @@
+/*
+ * spi.cpp
+ *
+ *  Created on: Aug 18, 2025
+ *      Author: ahmad
+ */
+
+#include "spi.hpp"
+
+#define SPI1EN      (1U << 12) // Enable clock for SPI1
+#define GPIOAEN     (1U << 0)  // Enable clock for GPIOA
+#define GPIOBEN     (1U << 1)  // Enable clock for GPIOB
+#define GPIOCEN     (1U << 2)  // Enable clock for GPIOC
+#define GPIODEN     (1U << 3)  // Enable clock for GPIOD
+#define GPIOEEN     (1U << 4)  // Enable clock for GPIOE
+#define SR_TXE      (1U << 1)  // Transmit buffer empty flag
+#define SR_RXNE     (1U << 0)  // Receive buffer not empty flag
+#define SR_BSY      (1U << 7)  // Busy flag
+
+SPI::SPI(SPI_TypeDef *spiX, GPIO_TypeDef *gpioX, uint8_t cs_pin)
+	: spiX(spiX), gpioX(gpioX), cs_pin(cs_pin) {
+
+	configureGPIO(gpioX, cs_pin); // Configure GPIO for SPI communication
+	configureSPI(spiX); // Configure the SPI peripheral
+
+}
+
+void SPI::configureGPIO(GPIO_TypeDef *gpioX, uint8_t cs_pin) {
+	// Configure GPIO for SPI communication
+
+	// Enable the clock for the SPI peripheral
+	if (gpioX == GPIOA) {
+		RCC->AHB1ENR |= GPIOAEN;
+	} else if (gpioX == GPIOB) {
+		RCC->AHB1ENR |= GPIOBEN;
+	} else if (gpioX == GPIOC) {
+		RCC->AHB1ENR |= GPIOCEN;
+	} else if (gpioX == GPIOD) {
+		RCC->AHB1ENR |= GPIODEN;
+	} else if (gpioX == GPIOE) {
+		RCC->AHB1ENR |= GPIOEEN;
+	}
+
+	// for  PA5, PA6, PA7,
+	// we can make logic to set dynamic pins based on GPIO,
+	// but for now only GPIOA and 5,6,7 pins are used
+	gpioX->MODER &= ~(1U << 10);
+	gpioX->MODER |= (1U << 11);
+
+	gpioX->MODER &= ~(1U << 12);
+	gpioX->MODER |= (1U << 13);
+
+	gpioX->MODER &= ~(1U << 14);
+	gpioX->MODER |= (1U << 15);
+
+	// Enable the clock for the SPI peripheral
+	gpioX->MODER |= (1U << (cs_pin * 2)); // Set CS pin as output
+	gpioX->MODER &= ~(1U << (cs_pin * 2 + 1)); // Clear the mode bits for CS pin
+
+    //PA5, PA6, PA7 are alternate function pins for SPI1
+	gpioX->AFR[0] |= (1U << 20);
+	gpioX->AFR[0] &= ~(1U << 21);
+	gpioX->AFR[0] |= (1U << 22);
+	gpioX->AFR[0] &= ~(1U << 23);
+
+	gpioX->AFR[0] |= (1U << 24);
+	gpioX->AFR[0] &= ~(1U << 25);
+	gpioX->AFR[0] |= (1U << 26);
+	gpioX->AFR[0] &= ~(1U << 27);
+
+	gpioX->AFR[0] |= (1U << 28);
+	gpioX->AFR[0] &= ~(1U << 29);
+	gpioX->AFR[0] |= (1U << 30);
+	gpioX->AFR[0] &= ~(1U << 31);
+
+}
+
+void SPI::configureSPI(SPI_TypeDef *spiX) {
+	// Configure the SPI peripheral
+
+	// Enable the clock for the SPI peripheral
+	if (spiX == SPI1) {
+		RCC->APB2ENR |= SPI1EN; // Enable clock for SPI1
+	} else if (spiX == SPI2) {
+		RCC->APB1ENR |= (1U << 14); // Enable clock for SPI2
+	} else if (spiX == SPI3) {
+		RCC->APB1ENR |= (1U << 15); // Enable clock for SPI3
+	} else if (spiX == SPI4) {
+		RCC->APB2ENR |= (1U << 13); // Enable clock for SPI4
+	} else if (spiX == SPI5) {
+		RCC->APB2ENR |= (1U << 20); // Enable clock for SPI5
+	}
+
+	// Set the SPI configuration
+	spiX->CR1 |= (1U << 3); // Set the SPI to fPCLK/4
+	spiX->CR1 &=~(1U << 4);
+	spiX->CR1 &=~(1U << 5);
+	spiX->CR1 |= (1U << 0); //CPHA = 1
+	spiX->CR1 |= (1U << 1); //CPOL = 1
+	spiX->CR1 &=~(1U << 10); //full duplex mode
+	spiX->CR1 &=~(1U << 7); //MSB first
+	spiX->CR1 |= (1U << 2); // Set the SPI to master mode
+	spiX->CR1 &=~(1U << 11); // Set the SPI to 8-bit data size
+	spiX->CR1 |= (1U << 8); // Set the SPI to software slave management
+	spiX->CR1 |= (1U << 9); // Set the SPI to internal slave select
+	spiX->CR1 |= (1U << 6); // Enable the SPI peripheral
+
+}
+
+
+void SPI::sendData(uint8_t *data, uint32_t size) {
+	uint32_t i = 0;
+	uint8_t temp;
+	// Send data over SPI
+	for (uint32_t i = 0; i < size; i++) {
+		while (!(spiX->SR & SR_TXE)); // Wait until the transmit buffer is empty
+		spiX->DR = data[i]; // Write data to the data register
+	}
+	while (spiX->SR & SR_TXE); // Wait until the TXE is not set
+	while (spiX->SR & SR_BSY); // Wait until the SPI is not busy
+	temp = spiX->DR; // Read the data from the data register to clear the RXNE flag
+	temp = spiX->SR; // Read the status register to clear the BSY flag
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

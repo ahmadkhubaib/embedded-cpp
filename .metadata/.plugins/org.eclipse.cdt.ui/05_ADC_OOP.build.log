@@ -1,10 +1,9 @@
-15:18:44 **** Incremental Build of configuration Debug for project 05_ADC_OOP ****
-make -j12 all 
-arm-none-eabi-size  05_ADC_OOP.elf 
-   text	   data	    bss	    dec	    hex	filename
-   2184	      0	   1576	   3760	    eb0	05_ADC_OOP.elf
-Finished building: default.size.stdout
+01:52:11 **** Clean-only build of configuration Debug for project 05_ADC_OOP ****
+make -j12 clean 
+rm -rf ./Startup/startup_stm32f411retx.d ./Startup/startup_stm32f411retx.o
+rm -rf ./Src/adc.cyclo ./Src/adc.d ./Src/adc.o ./Src/adc.su ./Src/fpu.cyclo ./Src/fpu.d ./Src/fpu.o ./Src/fpu.su ./Src/led.cyclo ./Src/led.d ./Src/led.o ./Src/led.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/timebase.cyclo ./Src/timebase.d ./Src/timebase.o ./Src/timebase.su ./Src/uart.cyclo ./Src/uart.d ./Src/uart.o ./Src/uart.su ./Src/usart.cyclo ./Src/usart.d ./Src/usart.o ./Src/usart.su
+rm -rf 05_ADC_OOP.elf 05_ADC_OOP.list 05_ADC_OOP.map default.size.stdout
  
 
-15:18:44 Build Finished. 0 errors, 0 warnings. (took 150ms)
+01:52:12 Build Finished. 0 errors, 0 warnings. (took 127ms)
 

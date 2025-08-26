@@ -1,0 +1,42 @@
+#include "led.hpp"
+#include "usart.hpp"
+#include "fpu.hpp"
+#include "timebase.hpp"
+#include "adc_custom.hpp"
+#include "adxl.hpp"
+#include "spi.hpp"
+
+//uint32_t adc_value = 0; // Variable to store ADC value
+
+int16_t x, y, z, xg, yg, zg;
+
+int main() {
+//	FPU_CP::enable(); // Enable the FPU
+//	TimeBase::init(); // Initialize the time base for SysTick
+//	ADC_CUSTOM adc_custom(ADC1, GPIOA, 1); // Create an instance of ADC_OBJ for ADC1 on pin PA1
+//	GPIO led(GPIOA, 5, true); // Create an instance of GPIO for pin PA5 as output
+//	GPIO button(GPIOC, 13, false); // Create an instance of GPIO for pin PC13 as input
+//	USART usart(USART2, 115200); // Create an instance of USART for USART2 with baud rate 115200
+//	adc_custom.init(); // Initialize the ADC
+//	adc_custom.start_conversion(); // Start the ADC conversion
+	SPI spi(SPI1, GPIOA, 9); // Create an instance of SPI class for SPI1 with GPIOA and CS pin 4
+	ADXL adxl(spi); // Create an instance of ADXL class with SPI1 and device address 0x53
+	adxl.init(); // Initialize the ADXL sensor
+	while (1) {
+		adxl.update_acceleration(); // Update acceleration data
+		x = adxl.getX(); // Get X-axis acceleration
+		y = adxl.getY(); // Get Y-axis acceleration
+		z = adxl.getZ(); // Get Z-axis acceleration
+		xg = adxl.getXG(); // Get X-axis acceleration in g
+		yg = adxl.getYG(); // Get Y-axis acceleration in g
+		zg = adxl.getZG(); // Get Z-axis acceleration in g
+		// You can add code here to use the x, y, z values as needed
+//		adc_value = adc_custom.read(); // Read the ADC value, via value can be seen in the debugger or by making an int to string conversion
+//		usart.sendString("Hello, USART...one second delay!\n\r"); // Send a string over USART
+//		TimeBase::delay(1); // Delay for (1 second)
+//		if (!button.read()) {
+//			led.toggle(); // Toggle the LED state
+//
+//		}
+	}
+}

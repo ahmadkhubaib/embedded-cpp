@@ -1,0 +1,11 @@
+../Src/adxl.cpp:23:1:ADXL::ADXL(SPI&, uint8_t)	24	static
+../Src/adxl.cpp:28:6:void ADXL::write_register(uint8_t, uint8_t)	24	static
+../Src/adxl.cpp:35:6:void ADXL::read_register(uint8_t, uint8_t*, uint8_t)	24	static
+../Src/adxl.cpp:43:6:void ADXL::init()	16	static
+../Src/adxl.cpp:50:6:void ADXL::update_acceleration()	24	static
+../Src/adxl.cpp:58:9:int16_t ADXL::getX()	16	static
+../Src/adxl.cpp:61:9:int16_t ADXL::getY()	16	static
+../Src/adxl.cpp:64:9:int16_t ADXL::getZ()	16	static
+../Src/adxl.cpp:68:9:int16_t ADXL::getXG()	16	static
+../Src/adxl.cpp:72:9:int16_t ADXL::getYG()	16	static
+../Src/adxl.cpp:76:9:int16_t ADXL::getZG()	16	static

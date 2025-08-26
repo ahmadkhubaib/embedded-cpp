@@ -1,6 +1,0 @@
-../Src/uart.cpp:21:5:int __io_putchar(int)	1
-../Src/uart.cpp:27:6:void uart2_tx_rx_init()	1
-../Src/uart.cpp:60:6:char uart2_read()	2
-../Src/uart.cpp:69:6:void uart2_write(int)	2
-../Src/uart.cpp:78:13:void uart_set_baudrate(USART_TypeDef*, uint32_t, uint32_t)	1
-../Src/uart.cpp:82:17:uint16_t compute_uart_br(uint32_t, uint32_t)	1

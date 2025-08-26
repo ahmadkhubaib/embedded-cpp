@@ -17,8 +17,8 @@
 #define SR_RXNE     (1U << 0)  // Receive buffer not empty flag
 #define SR_BSY      (1U << 7)  // Busy flag
 
-SPI::SPI(SPI_TypeDef *spiX, GPIO_TypeDef *gpioX, uint8_t cs_pin)
-	: spiX(spiX), gpioX(gpioX), cs_pin(cs_pin) {
+SPI::SPI(SPI_TypeDef *spiX, GPIO_TypeDef *gpioX, uint8_t cs_pin) :
+		spiX(spiX), gpioX(gpioX), cs_pin(cs_pin) {
 
 	configureGPIO(gpioX, cs_pin); // Configure GPIO for SPI communication
 	configureSPI(spiX); // Configure the SPI peripheral
@@ -57,7 +57,7 @@ void SPI::configureGPIO(GPIO_TypeDef *gpioX, uint8_t cs_pin) {
 	gpioX->MODER |= (1U << (cs_pin * 2)); // Set CS pin as output
 	gpioX->MODER &= ~(1U << (cs_pin * 2 + 1)); // Clear the mode bits for CS pin
 
-    //PA5, PA6, PA7 are alternate function pins for SPI1
+	//PA5, PA6, PA7 are alternate function pins for SPI1
 	gpioX->AFR[0] |= (1U << 20);
 	gpioX->AFR[0] &= ~(1U << 21);
 	gpioX->AFR[0] |= (1U << 22);
@@ -93,59 +93,54 @@ void SPI::configureSPI(SPI_TypeDef *spiX) {
 
 	// Set the SPI configuration
 	spiX->CR1 |= (1U << 3); // Set the SPI to fPCLK/4
-	spiX->CR1 &=~(1U << 4);
-	spiX->CR1 &=~(1U << 5);
+	spiX->CR1 &= ~(1U << 4);
+	spiX->CR1 &= ~(1U << 5);
 	spiX->CR1 |= (1U << 0); //CPHA = 1
 	spiX->CR1 |= (1U << 1); //CPOL = 1
-	spiX->CR1 &=~(1U << 10); //full duplex mode
-	spiX->CR1 &=~(1U << 7); //MSB first
+	spiX->CR1 &= ~(1U << 10); //full duplex mode
+	spiX->CR1 &= ~(1U << 7); //MSB first
 	spiX->CR1 |= (1U << 2); // Set the SPI to master mode
-	spiX->CR1 &=~(1U << 11); // Set the SPI to 8-bit data size
+	spiX->CR1 &= ~(1U << 11); // Set the SPI to 8-bit data size
 	spiX->CR1 |= (1U << 8); // Set the SPI to software slave management
 	spiX->CR1 |= (1U << 9); // Set the SPI to internal slave select
 	spiX->CR1 |= (1U << 6); // Enable the SPI peripheral
 
 }
 
-
 void SPI::sendData(uint8_t *data, uint32_t size) {
 	uint32_t i = 0;
 	uint8_t temp;
 	// Send data over SPI
 	for (uint32_t i = 0; i < size; i++) {
-		while (!(spiX->SR & SR_TXE)); // Wait until the transmit buffer is empty
+		while (!(spiX->SR & SR_TXE))
+			; // Wait until the transmit buffer is empty
 		spiX->DR = data[i]; // Write data to the data register
 	}
-	while (spiX->SR & SR_TXE); // Wait until the TXE is not set
-	while (spiX->SR & SR_BSY); // Wait until the SPI is not busy
+	while (spiX->SR & SR_TXE)
+		; // Wait until the TXE is not set
+	while (spiX->SR & SR_BSY)
+		; // Wait until the SPI is not busy
 	temp = spiX->DR; // Read the data from the data register to clear the RXNE flag
 	temp = spiX->SR; // Read the status register to clear the BSY flag
 }
 
+void SPI::receiveData(uint8_t *data, uint32_t size) {
+	// Receive data over SPI
+	while (size) {
+		spiX->DR = 0xFF; // Send dummy byte to generate clock
+		while (!(spiX->SR & SR_RXNE))
+			; // Wait until the receive buffer is not empty
+		*data++ = spiX->DR; // Read data from the data register
+		size--;
+	}
+}
 
+void SPI::setCSHigh() {
+	// Set CS pin high/disable
+	gpioX->ODR |= (1U << cs_pin);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void SPI::setCSLow() {
+	gpioX->ODR &= ~(1U << cs_pin); // Set CS pin low/enable
+}
 

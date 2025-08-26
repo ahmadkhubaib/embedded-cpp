@@ -1,5 +1,0 @@
-../Src/led.cpp:9:1:GPIO::GPIO(GPIO_TypeDef*, uint8_t, bool)	7
-../Src/led.cpp:35:6:void GPIO::toggle()	1
-../Src/led.cpp:38:6:void GPIO::set()	1
-../Src/led.cpp:41:6:void GPIO::reset()	1
-../Src/led.cpp:44:6:bool GPIO::read()	1

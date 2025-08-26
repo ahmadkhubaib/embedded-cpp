@@ -20,11 +20,10 @@ private:
 public:
 	SPI(SPI_TypeDef *spiX, GPIO_TypeDef *gpioX, uint8_t cs_pin);
 
-	void init(); // Initialize the SPI peripheral
 	void sendData(uint8_t *data, uint32_t size); // Send data over SPI
-	uint8_t receiveData(); // Receive data over SPI
-	void setCSHigh(); // Set Chip Select pin high
-	void setCSLow(); // Set Chip Select pin low
+	void receiveData(uint8_t *data, uint32_t size); // Receive data over SPI
+	void setCSHigh(); // Set Chip Select pin high/disable
+	void setCSLow(); // Set Chip Select pin low/enable
 };
 
 #endif /* SPI_HPP_ */

@@ -1,17 +1,10 @@
-20:25:18 **** Incremental Build of configuration Debug for project 06_ADXL_SPI_OOP ****
+02:05:56 **** Incremental Build of configuration Debug for project 06_ADXL_SPI_OOP ****
 make -j12 all 
-arm-none-eabi-g++ "../Src/spi.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I../Inc -I/home/ahmad/Documents/chip_headers/CMSIS/Device/ST/STM32F4xx -I/home/ahmad/Documents/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi.d" -MT"Src/spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/spi.o"
-arm-none-eabi-g++ -o "06_ADXL_SPI_OOP.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/ahmad/Documents/embedded-cpp/06_ADXL_SPI_OOP/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="06_ADXL_SPI_OOP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: 06_ADXL_SPI_OOP.elf
- 
 arm-none-eabi-size  06_ADXL_SPI_OOP.elf 
-arm-none-eabi-objdump -h -S 06_ADXL_SPI_OOP.elf  > "06_ADXL_SPI_OOP.list"
    text	   data	    bss	    dec	    hex	filename
-   2184	      0	   1576	   3760	    eb0	06_ADXL_SPI_OOP.elf
+   2612	      0	   1584	   4196	   1064	06_ADXL_SPI_OOP.elf
 Finished building: default.size.stdout
  
-Finished building: 06_ADXL_SPI_OOP.list
- 
 
-20:25:18 Build Finished. 0 errors, 0 warnings. (took 253ms)
+02:05:56 Build Finished. 0 errors, 0 warnings. (took 103ms)
 
